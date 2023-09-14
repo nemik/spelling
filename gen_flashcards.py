@@ -30,7 +30,7 @@ spelling_model = genanki.Model(
     {
       'name': 'Card 1',
       'qfmt': '{{SpokenWord}}',
-      'afmt': '{{FrontSide}}<hr id="answer">{{SpelledWord}}',
+      'afmt': '{{FrontSide}}<hr id="answer"><h1>{{SpelledWord}}</h1>',
     },
   ])
 
@@ -63,7 +63,7 @@ with open('words.txt', 'r') as f:
             words.append(line)
 
 # create sounds files
-#create_sound_files(words)
+create_sound_files(words)
 
 # create a deck
 create_deck(words)
