@@ -47,9 +47,7 @@ def create_deck(words):
         spelling_deck.add_note(note)
     package = genanki.Package(spelling_deck)
     package.media_files = [f"{word}.mp3" for word in words]
-    print(package.media_files)
     package.write_to_file('spelling.apkg')
-
 
 # word list, get from file called words.txt
 words = []
@@ -64,11 +62,12 @@ with open('words.txt', 'r') as f:
             # add to word list
             words.append(line)
 
-# print the words
-print(words)
-
 # create sounds files
-create_sound_files(words)
+#create_sound_files(words)
 
 # create a deck
 create_deck(words)
+
+print(f'Done!')
+print(f'Created {len(words)} cards for the words: {words}')
+print(f'Import spelling.apkg into Mochi or Anki')
