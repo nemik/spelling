@@ -3,7 +3,7 @@
 import os
 import genanki
 
-mp3_convert_cmd = "ffmpeg -i tmp.wav -vn -ar 44100 -ac 2 -b:a 192k tmp.mp3"
+mp3_convert_cmd = 'ffmpeg -i tmp.wav -vn -filter:a "atempo=0.8" -ar 44100 -ac 2 -b:a 192k tmp.mp3'
 tts_cmd = 'tts --text "__word__" --model_name tts_models/en/jenny/jenny --out_path tmp.wav'
 
 def create_sound_files(words):
